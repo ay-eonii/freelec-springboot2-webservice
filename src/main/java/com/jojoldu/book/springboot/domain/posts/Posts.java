@@ -1,6 +1,7 @@
 package com.jojoldu.book.springboot.domain.posts;
 
 
+import com.jojoldu.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Getter //lombok - 변경최소화를 위해 @Entity에 @Setter금지
 @NoArgsConstructor //lombok - 기본생성자 자동 추가
 @Entity //JPA - 테이블과 링크될 클래스임을 나타냄
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id //PK
     @GeneratedValue(strategy = GenerationType.IDENTITY) //PK생성규칙
@@ -37,4 +38,9 @@ public class Posts {
             .author("author")
             .build();
 */
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
 }
