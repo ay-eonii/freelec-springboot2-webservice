@@ -1,4 +1,4 @@
-package com.jojoldu.book.springboot.web.posts;
+package com.jojoldu.book.springboot.domain.posts;
 
 
 import com.jojoldu.book.springboot.domain.posts.Posts;
